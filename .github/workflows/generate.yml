@@ -1,0 +1,54 @@
+name: Generate TopEmbed static site
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # daily at 06:00 UTC (adjust to your preferred time)
+  workflow_dispatch: {}
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install requests==2.31.0
+
+      - name: Run generator
+        run: python generate.py --output out --limit 200
+
+      - name: Prepare gh-pages branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # create an orphan gh-pages branch and replace contents
+          git checkout --orphan gh-pages || true
+          git rm -rf . >/dev/null 2>&1 || true
+          mkdir -p .
+          # copy generated site
+          cp -R out/* .
+          # move generated index into /embed/ so landing page can be the site root
+          if [ -f index.html ]; then
+            mkdir -p embed
+            mv index.html embed/index.html
+          fi
+          # place landing_page.html at site root if present
+          if [ -f landing_page.html ]; then
+            cp landing_page.html index.html
+          fi
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to publish"
+          else
+            git commit -m "Auto-generated site: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+            git push -f origin gh-pages
+          fi
