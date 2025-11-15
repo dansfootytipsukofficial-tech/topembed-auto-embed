@@ -2,3 +2,9 @@ out/
 __pycache__/
 *.pyc
 .env
+# Virtualenvs
+.venv/
+.venv_brew/
+
+# OS files
+.DS_Store
