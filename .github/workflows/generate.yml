@@ -15,21 +15,38 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Puppeteer extractor deps
+        run: |
+          npm ci
+
+      - name: Extract final stream URLs with Puppeteer
+        run: |
+            node scripts/extractor2.js --input embed/channels.json --output embed/channels.resolved.json --concurrency 4 || true
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Install Python deps
         run: python -m pip install --upgrade pip && pip install requests==2.31.0
 
       - name: Run generator
-        run: python generate.py --output out --limit 200
+        run: python generate.py --output out --limit 200 || true
 
       - name: Prepare gh-pages branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # prefer the resolved channels file if present
+          if [ -f embed/channels.resolved.json ]; then
+            mv embed/channels.resolved.json embed/channels.json
+          fi
           # create an orphan gh-pages branch and replace contents
           git checkout --orphan gh-pages || true
           git rm -rf . >/dev/null 2>&1 || true

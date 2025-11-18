@@ -1,0 +1,12 @@
+{
+  "name": "topembed-extractor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "extract": "node scripts/extractor.js"
+  },
+  "dependencies": {
+    "puppeteer": "^20.9.0",
+    "minimist": "^1.2.8"
+  }
+}
