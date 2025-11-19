@@ -46,7 +46,7 @@ jobs:
         if: steps.commit.outputs.no_changes == 'false'
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: ci: update channels.resolved.json
+          commit-message: "ci: update channels.resolved.json"
           branch: update/channels-resolved
           title: Update channels.resolved.json (CI)
           body: Automated update of channels.resolved.json from the Puppeteer extractor.
