@@ -1,6 +1,10 @@
 name: Run Puppeteer extractor
 
 on:
+  # Temporarily allow push to main so we can trigger the workflow from a git push
+  # (remove this block after the run if you prefer).
+  push:
+    branches: [ main ]
   workflow_dispatch: {}
   schedule:
     # Run daily at 02:00 UTC for automatic updates
