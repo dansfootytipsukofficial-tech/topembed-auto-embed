@@ -34,6 +34,13 @@ jobs:
         run: |
           node scripts/extractor.js --input embed/channels.json --output embed/channels.resolved.json --concurrency 4
 
+      - name: Upload debug log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: extractor-debug
+          path: debug/extractor.log
+
       - name: Commit changes
         id: commit
         run: |
