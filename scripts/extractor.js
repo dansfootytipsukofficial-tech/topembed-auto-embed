@@ -87,19 +87,18 @@ async function processChannel(browser, ch) {
 }
 
 async function extract() {
+  let channels = [];
   if (!fs.existsSync(inputPath)) {
-    console.error('Input channels file not found:', inputPath);
-    process.exit(1);
-  }
-
-  const raw = fs.readFileSync(inputPath, 'utf8');
-  let channels;
-  try {
-    const j = JSON.parse(raw);
-    channels = j.channels || j;
-  } catch (e) {
-    console.error('Failed to parse input JSON', e && e.message ? e.message : e);
-    process.exit(1);
+    console.warn('Input channels file not found, continuing with empty channels list:', inputPath);
+  } else {
+    const raw = fs.readFileSync(inputPath, 'utf8');
+    try {
+      const j = JSON.parse(raw);
+      channels = j.channels || j;
+    } catch (e) {
+      console.warn('Failed to parse input JSON, continuing with empty channels list', e && e.message ? e.message : e);
+      channels = [];
+    }
   }
 
   console.log('Channels to process:', Array.isArray(channels) ? channels.length : 0, 'concurrency =', concurrency);
