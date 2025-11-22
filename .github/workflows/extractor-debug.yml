@@ -53,7 +53,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           BRANCH="debug/extractor-logs-${{ github.run_id }}"
           git checkout -b "$BRANCH" || git switch "$BRANCH"
-          git add debug/extractor.log embed/channels.resolved.json || true
+          # create a small marker so the commit always has a file to change
+          echo "run: ${{ github.run_id }} $(date -u)" > debug/run-${{ github.run_id }}.txt || true
+          git add debug/extractor.log embed/channels.resolved.json debug/run-${{ github.run_id }}.txt || true
           if git commit -m "ci(debug): add extractor debug artifacts for run ${{ github.run_id }}"; then
             git push --set-upstream origin "$BRANCH"
           else
