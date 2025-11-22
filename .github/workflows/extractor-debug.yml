@@ -46,3 +46,16 @@ jobs:
         run: |
           echo "=== debug/extractor.log (first 400 lines) ==="
           sed -n '1,400p' debug/extractor.log || true
+
+      - name: Commit debug artifacts to branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="debug/extractor-logs-${{ github.run_id }}"
+          git checkout -b "$BRANCH" || git switch "$BRANCH"
+          git add debug/extractor.log embed/channels.resolved.json || true
+          if git commit -m "ci(debug): add extractor debug artifacts for run ${{ github.run_id }}"; then
+            git push --set-upstream origin "$BRANCH"
+          else
+            echo "No changes to commit"
+          fi
