@@ -1,0 +1,48 @@
+name: Extractor Debug Run
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  debug-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          npm install --no-audit --no-fund || true
+
+      - name: Create debug dir
+        run: mkdir -p debug || true
+
+      - name: Run extractor (capture stdout/stderr)
+        run: |
+          node scripts/extractor.js --input embed/channels.json --output embed/channels.resolved.json --concurrency 4 2>&1 | tee debug/extractor.log || true
+
+      - name: Upload debug artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: extractor-debug
+          path: |
+            debug/extractor.log
+            embed/channels.resolved.json
+
+      - name: Print debug log head
+        run: |
+          echo "=== debug/extractor.log (first 400 lines) ==="
+          sed -n '1,400p' debug/extractor.log || true
