@@ -1,17 +1,29 @@
 TopEmbed automatic embed generator
 
+## 🎯 Perfect for Weebly Websites!
+
+This repository provides **automated, daily-updated sports streams** that you can easily embed into your Weebly website. No manual updates needed — streams refresh automatically every day!
+
+**👉 [⚡ QUICKSTART for Weebly Users](QUICKSTART.md)** — Get started in 3 steps  
+**👉 [📚 Complete Weebly Setup Guide](WEEBLY-SETUP.md)** — Detailed instructions
+
+---
+
 What this does
 
 - Fetches the TopEmbed JSON API (https://topembed.pw/api.php?format=json)
 - Builds a lightweight static HTML page (index.html) with a grid of channels
 - The grid uses a lightweight lazy-load player: clicking a tile loads the TopEmbed channel in a single iframe (minimizes resource use)
 - A GitHub Action runs daily and publishes the generated files to the gh-pages branch so you get a public URL (https://<user>.github.io/<repo>/)
+- **Works perfectly in Weebly using the Embed Code element**
 
 Why use this
 
 - Avoids CORS/referrer issues by serving a static page from your own origin
 - Keeps your site light by lazy-loading a single player iframe
 - Automates daily refresh of the channel list
+- **No server or hosting required** — uses free GitHub Pages
+- **AdSense-friendly setup** with separate landing and embed pages
 
 Important legal and AdSense notes
 
@@ -19,6 +31,18 @@ Important legal and AdSense notes
 - This generator does NOT add or manipulate any AdSense code. If you display Google AdSense on pages that embed third-party streams, verify that doing so complies with AdSense and local law. If unsure, keep AdSense disabled on the pages that display third-party streams.
 
 How to use (quick)
+
+### For Weebly Users (Easiest Method)
+
+**See the complete [Weebly Setup Guide](WEEBLY-SETUP.md)** for step-by-step instructions.
+
+Quick summary:
+1. Fork this repository to your GitHub account
+2. Enable GitHub Actions and GitHub Pages (gh-pages branch)
+3. Copy the embed code into a Weebly Embed Code element
+4. Your streams will update automatically every day!
+
+### For Advanced Users or Other Platforms
 
 1. Create a new GitHub repository (public or private). Clone it locally.
 2. Copy the contents of this folder into the repo root and push.

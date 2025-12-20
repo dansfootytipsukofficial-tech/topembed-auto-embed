@@ -1,0 +1,53 @@
+<!-- 
+  WEEBLY EMBED CODE — Copy this into a Weebly "Embed Code" element
+  
+  Instructions:
+  1. In Weebly editor, drag an "Embed Code" element onto your page
+  2. Click "Edit Custom HTML"
+  3. Copy this entire code
+  4. Replace [YOUR-GITHUB-USERNAME] with your actual GitHub username
+  5. Replace [YOUR-REPO-NAME] with your repository name (e.g., topembed-auto-embed)
+  6. Paste into Weebly and click "Update"
+-->
+
+<div style="width:100%;max-width:1200px;margin:0 auto;">
+  <iframe 
+    src="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/embed/" 
+    width="100%" 
+    height="900" 
+    style="border:0;display:block;"
+    allowfullscreen
+    title="Live Sports Streams">
+  </iframe>
+</div>
+
+<!-- 
+  Optional: Add a loading message that shows while the iframe loads
+-->
+<div id="loading-msg" style="text-align:center;padding:20px;color:#666;">
+  <p>Loading streams...</p>
+</div>
+
+<script>
+  // Hide loading message once iframe loads
+  window.addEventListener('load', function() {
+    var loadingMsg = document.getElementById('loading-msg');
+    if (loadingMsg) loadingMsg.style.display = 'none';
+  });
+</script>
+
+<!-- 
+  ALTERNATIVE: Button Link (opens in new tab instead of embedding)
+  
+  Use this if you prefer a button instead of an embedded player:
+  
+  <div style="text-align:center;padding:20px;">
+    <a href="https://[YOUR-GITHUB-USERNAME].github.io/[YOUR-REPO-NAME]/embed/" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       style="display:inline-block;background:#0a84ff;color:white;padding:15px 30px;
+              border-radius:8px;text-decoration:none;font-weight:bold;font-size:18px;">
+      🏆 Watch Live Sports Streams
+    </a>
+  </div>
+-->

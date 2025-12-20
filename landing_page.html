@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Dan's Footy Tips — Live Streams</title>
+  <meta name="description" content="Watch live sports streams - automatically updated daily from TopEmbed. AdSense-friendly setup.">
   <style>
     body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#111}
     .container{max-width:1100px;margin:0 auto;padding:18px}
@@ -22,7 +23,8 @@
     </header>
 
     <div class="hero">
-      <p>Watch selected live sports streams. Streams open in a separate player page so this landing page remains ad-enabled and compliant with AdSense policies.</p>
+      <p>Watch live sports streams automatically updated daily. This landing page is AdSense-friendly — click the button below to access the ad-free stream player.</p>
+      <p><strong>For Weebly users:</strong> You can embed the player directly using an iframe. <a href="https://github.com/dansfootytipsukofficial-tech/topembed-auto-embed/blob/main/WEEBLY-SETUP.md" style="color:#0a84ff;">See setup guide</a></p>
       <a class="cta" href="/embed/">Open Live Streams</a>
     </div>
 
@@ -38,13 +40,24 @@
 
     <div class="content">
       <h2>How this works</h2>
-      <p>This page shows ads and high-quality editorial content to keep your AdSense account safe. The live stream player opens on a separate page (no AdSense there) which reduces policy risk and keeps ad revenue intact.</p>
+      <p>This system fetches sports streams from TopEmbed API and updates automatically every day via GitHub Actions. The streams are served from GitHub Pages, making it easy to embed anywhere — including Weebly!</p>
+
+      <h3>Embedding in Weebly</h3>
+      <p>To add these streams to your Weebly site:</p>
+      <ol>
+        <li>Copy your GitHub Pages URL (e.g., https://[username].github.io/[repo]/embed/)</li>
+        <li>In Weebly editor, drag an <strong>Embed Code</strong> element to your page</li>
+        <li>Paste an iframe tag pointing to your /embed/ URL</li>
+        <li>Publish your Weebly site</li>
+      </ol>
+      <p><a href="https://github.com/dansfootytipsukofficial-tech/topembed-auto-embed/blob/main/WEEBLY-SETUP.md" style="color:#0a84ff;font-weight:600;">📚 View complete Weebly setup guide →</a></p>
 
       <h3>Monetization tips</h3>
       <ul>
-        <li>Keep the embed/player page ad-free.</li>
-        <li>Use affiliate banners in the sidebar or below the player link.</li>
-        <li>Collect emails with a signup form to drive repeat traffic.</li>
+        <li>Keep the embed/player page ad-free for AdSense compliance</li>
+        <li>Show ads on landing pages like this one (before visitors click to streams)</li>
+        <li>Use affiliate banners in the sidebar or below the player link</li>
+        <li>Collect emails with a signup form to drive repeat traffic</li>
       </ul>
     </div>
 
