@@ -6,5 +6,12 @@ __pycache__/
 .venv/
 .venv_brew/
 
+# Node.js
+node_modules/
+package-lock.json
+
+# Debug logs
+debug/
+
 # OS files
 .DS_Store
