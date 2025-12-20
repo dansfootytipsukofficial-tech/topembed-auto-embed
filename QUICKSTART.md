@@ -31,6 +31,7 @@ Click the **"Use this template"** button at the top of this page (or Fork this r
 ## 📚 Full Documentation
 
 - **[Complete Weebly Setup Guide](WEEBLY-SETUP.md)** — Detailed instructions with screenshots
+- **[Visual Integration Demo](examples/weebly-integration-demo.html)** — See how it looks in action
 - **[weebly-embed-code.html](weebly-embed-code.html)** — Copy-paste embed code
 - **[README.md](README.md)** — Technical documentation
 - **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** — Common issues and fixes

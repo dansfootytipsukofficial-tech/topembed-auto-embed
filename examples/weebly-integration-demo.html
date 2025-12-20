@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weebly Integration Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .example-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .code-block {
+      background: #282c34;
+      color: #abb2bf;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+    .highlight {
+      background: #ffe066;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    .step {
+      display: flex;
+      align-items: start;
+      margin: 15px 0;
+    }
+    .step-number {
+      background: #0a84ff;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    h1 { color: #333; }
+    h2 { color: #0a84ff; margin-top: 0; }
+    .demo-iframe {
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏆 Weebly Sports Streams Integration Example</h1>
+  <p>This page demonstrates how your automated sports streams will look when embedded in your Weebly website.</p>
+
+  <div class="example-section">
+    <h2>Step 1: Your GitHub Pages URL</h2>
+    <p>After setting up this repository, your streams will be hosted at:</p>
+    <div class="code-block">
+      https://<span class="highlight">[your-username]</span>.github.io/<span class="highlight">[repo-name]</span>/embed/
+    </div>
+    <p><strong>Example:</strong> <code>https://dansfootytipsukofficial-tech.github.io/topembed-auto-embed/embed/</code></p>
+  </div>
+
+  <div class="example-section">
+    <h2>Step 2: Embed Code for Weebly</h2>
+    <p>In your Weebly editor, add an "Embed Code" element and paste:</p>
+    <div class="code-block">
+&lt;div style="width:100%;max-width:1200px;margin:0 auto;"&gt;<br>
+&nbsp;&nbsp;&lt;iframe<br>
+&nbsp;&nbsp;&nbsp;&nbsp;src="https://<span class="highlight">[your-username]</span>.github.io/<span class="highlight">[repo-name]</span>/embed/"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width="100%"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height="900"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;style="border:0;display:block;"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;allowfullscreen<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title="Live Sports Streams"&gt;<br>
+&nbsp;&nbsp;&lt;/iframe&gt;<br>
+&lt;/div&gt;
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h2>Step 3: What Your Visitors Will See</h2>
+    <p>Your embedded player will look like this (demo with sample channels):</p>
+    <div class="demo-iframe">
+      <div style="background:#111;color:#eee;padding:20px;text-align:center;">
+        <h3 style="margin:0.2em 0;color:#eee;">TopEmbed — Channels</h3>
+        <p style="font-size:12px;color:#bbb;">Click a tile to open the stream in the player. Lazy-loads a single iframe to reduce browser load.</p>
+      </div>
+      <div style="background:#000;padding:10px;text-align:center;">
+        <p style="color:#ccc;font-size:12px;">No channel loaded. Click a tile to play.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;padding:15px;background:#111;">
+        <div style="background:#141414;border:1px solid #222;border-radius:6px;padding:10px;flex:1;min-width:250px;">
+          <div style="color:#eee;font-size:14px;margin-bottom:8px;">ESPN HD [UK]</div>
+          <div style="font-size:12px;color:#bbb;margin-bottom:8px;">Source: <a href="#" style="color:#7fe0ff;">Open</a></div>
+          <button style="width:100%;padding:10px;border-radius:4px;border:0;background:#0a84ff;color:white;font-weight:600;cursor:pointer;">Play</button>
+        </div>
+        <div style="background:#141414;border:1px solid #222;border-radius:6px;padding:10px;flex:1;min-width:250px;">
+          <div style="color:#eee;font-size:14px;margin-bottom:8px;">Sky Sports Football</div>
+          <div style="font-size:12px;color:#bbb;margin-bottom:8px;">Source: <a href="#" style="color:#7fe0ff;">Open</a></div>
+          <button style="width:100%;padding:10px;border-radius:4px;border:0;background:#0a84ff;color:white;font-weight:600;cursor:pointer;">Play</button>
+        </div>
+        <div style="background:#141414;border:1px solid #222;border-radius:6px;padding:10px;flex:1;min-width:250px;">
+          <div style="color:#eee;font-size:14px;margin-bottom:8px;">BT Sport 1 HD</div>
+          <div style="font-size:12px;color:#bbb;margin-bottom:8px;">Source: <a href="#" style="color:#7fe0ff;">Open</a></div>
+          <button style="width:100%;padding:10px;border-radius:4px;border:0;background:#0a84ff;color:white;font-weight:600;cursor:pointer;">Play</button>
+        </div>
+      </div>
+    </div>
+    <p><em>Note: This is a static preview. The actual embed will have working streams that update automatically daily.</em></p>
+  </div>
+
+  <div class="example-section">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-number">1</div>
+      <div>
+        <strong>Daily Automation</strong><br>
+        GitHub Actions runs every day at 6 AM UTC, fetching the latest sports streams from TopEmbed API.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div>
+        <strong>Stream Extraction</strong><br>
+        Puppeteer extracts working HLS stream URLs from the TopEmbed channels.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div>
+        <strong>HTML Generation</strong><br>
+        Python script generates a clean, mobile-responsive player page with all available channels.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">4</div>
+      <div>
+        <strong>GitHub Pages Hosting</strong><br>
+        The generated site is published to the gh-pages branch and served via GitHub Pages (free hosting).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">5</div>
+      <div>
+        <strong>Weebly Embed</strong><br>
+        You embed the GitHub Pages URL in your Weebly site using an iframe. Your visitors see fresh streams every day!
+      </div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h2>Features</h2>
+    <ul>
+      <li>✅ <strong>Automatic Updates:</strong> Streams refresh daily without any manual work</li>
+      <li>✅ <strong>Mobile Responsive:</strong> Works on all devices and screen sizes</li>
+      <li>✅ <strong>Lazy Loading:</strong> Only loads one iframe at a time for better performance</li>
+      <li>✅ <strong>Free Hosting:</strong> No server costs - uses GitHub Pages</li>
+      <li>✅ <strong>AdSense Friendly:</strong> Keep ads on landing pages, not on embed pages</li>
+      <li>✅ <strong>Easy Integration:</strong> Simple iframe embed code for Weebly</li>
+    </ul>
+  </div>
+
+  <div class="example-section">
+    <h2>Next Steps</h2>
+    <ol>
+      <li>Fork this repository or set it up with your GitHub account</li>
+      <li>Enable GitHub Actions and GitHub Pages</li>
+      <li>Wait for the first workflow to run (or trigger manually)</li>
+      <li>Copy the embed code into your Weebly site</li>
+      <li>Publish and enjoy automated sports streams!</li>
+    </ol>
+    <p><strong>📚 Full Setup Guide:</strong> <a href="../WEEBLY-SETUP.md">WEEBLY-SETUP.md</a></p>
+    <p><strong>⚡ Quick Start:</strong> <a href="../QUICKSTART.md">QUICKSTART.md</a></p>
+  </div>
+
+  <div class="example-section" style="background:#fff9e6;border-left:4px solid #ffa500;">
+    <h2 style="color:#ff6600;">⚠️ Legal Notice</h2>
+    <p><strong>Important:</strong> TopEmbed may host copyrighted or paid sports streams. You are responsible for ensuring you have the legal right to embed and display these streams on your website.</p>
+    <ul>
+      <li>Check your local laws regarding streaming copyrighted content</li>
+      <li>Verify compliance with Google AdSense policies if you show ads</li>
+      <li>Consider keeping the embed page ad-free to reduce policy risks</li>
+      <li>The repository maintainers are not responsible for the content from third-party APIs</li>
+    </ul>
+  </div>
+
+</body>
+</html>
