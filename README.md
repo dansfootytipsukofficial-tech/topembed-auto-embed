@@ -1,11 +1,33 @@
 TopEmbed automatic embed generator
 
+## 🌟 NOW WITH PREMIUM STREAMHUB INTERFACE!
+
+Transform your Weebly site into a **world-class streaming platform** with our brand new **StreamHub Premium** interface!
+
+### ✨ What's New
+- 🎨 **Netflix-style UI** with modern dark theme
+- 🔍 **Real-time search** across all channels
+- 📂 **Smart categories**: Sports, Movies, TV Shows, News
+- ⭐ **Favorites & Recently Watched** with browser storage
+- 📱 **Fully responsive** - perfect on mobile
+- 🎯 **Sticky player** that stays visible while browsing
+- ⚡ **Lightning fast** with instant filtering
+
+**👉 [⚡ QUICKSTART for Weebly Users](QUICKSTART.md)** — Get started in 3 steps  
+**👉 [🌟 Premium Features Guide](PREMIUM-FEATURES.md)** — See all the amazing features  
+**👉 [📚 Complete Weebly Setup Guide](WEEBLY-SETUP.md)** — Detailed instructions
+
+### 📸 Preview
+
+![StreamHub Interface](https://github.com/user-attachments/assets/850f8a87-5234-4bbd-a724-c7c0799b76fc)
+
+![StreamHub Player](https://github.com/user-attachments/assets/48701004-d588-473d-8531-09a9fa725328)
+
+---
+
 ## 🎯 Perfect for Weebly Websites!
 
 This repository provides **automated, daily-updated sports streams** that you can easily embed into your Weebly website. No manual updates needed — streams refresh automatically every day!
-
-**👉 [⚡ QUICKSTART for Weebly Users](QUICKSTART.md)** — Get started in 3 steps  
-**👉 [📚 Complete Weebly Setup Guide](WEEBLY-SETUP.md)** — Detailed instructions
 
 ---
 

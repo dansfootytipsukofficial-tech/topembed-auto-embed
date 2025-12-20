@@ -2,6 +2,23 @@
 
 Add automatically-updated sports streams to your Weebly website in 3 simple steps!
 
+## 🌟 NEW: StreamHub Premium Interface
+
+**World-class streaming platform** with Netflix-style UI, real-time search, favorites, and more!
+
+### ✨ Premium Features
+- 🎨 **Modern Netflix-style UI** with dark theme
+- 🔍 **Real-time search** across all channels
+- 📂 **Smart categories**: Sports, Movies, TV Shows, News
+- ⭐ **Favorites & Recently Watched** tracking
+- 📱 **Fully responsive** - works on all devices (mobile, tablet, desktop)
+- 🎯 **Sticky player** stays visible while browsing
+- ⚡ **Lightning fast** with instant filtering
+
+**👉 [🌟 See All Premium Features](PREMIUM-FEATURES.md)**
+
+---
+
 ## ⚡ Quick Start
 
 ### Step 1: Get Your Own Copy
