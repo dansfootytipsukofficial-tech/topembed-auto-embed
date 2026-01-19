@@ -175,13 +175,13 @@ function initContactForm() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
+            // Get form values and sanitize
             const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
+                name: sanitizeInput(document.getElementById('name').value),
+                email: sanitizeInput(document.getElementById('email').value),
+                phone: sanitizeInput(document.getElementById('phone').value),
                 service: document.getElementById('service').value,
-                message: document.getElementById('message').value
+                message: sanitizeInput(document.getElementById('message').value)
             };
             
             // Validate form
@@ -233,10 +233,19 @@ function initContactForm() {
     }
 }
 
+// Input Sanitization
+function sanitizeInput(input) {
+    // Remove any HTML tags and trim whitespace
+    const div = document.createElement('div');
+    div.textContent = input;
+    return div.innerHTML.trim();
+}
+
 // Email Validation
 function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    // More robust email validation pattern
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    return emailRegex.test(email) && email.length <= 254;
 }
 
 // Show Form Message
@@ -286,13 +295,20 @@ function showFormMessage(message, type) {
     }, 5000);
 }
 
-// Add parallax effect to hero section (optional enhancement)
+// Add parallax effect to hero section with throttling (optional enhancement)
+let parallaxTicking = false;
 window.addEventListener('scroll', function() {
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const scrolled = window.pageYOffset;
-        const parallaxSpeed = 0.5;
-        hero.style.backgroundPositionY = -(scrolled * parallaxSpeed) + 'px';
+    if (!parallaxTicking) {
+        window.requestAnimationFrame(function() {
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const scrolled = window.pageYOffset;
+                const parallaxSpeed = 0.5;
+                hero.style.backgroundPositionY = -(scrolled * parallaxSpeed) + 'px';
+            }
+            parallaxTicking = false;
+        });
+        parallaxTicking = true;
     }
 });
 
